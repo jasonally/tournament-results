@@ -25,3 +25,33 @@ CREATE TABLE matches(
     winner integer REFERENCES players(id),
     loser integer REFERENCES players(id)
 );
+
+CREATE VIEW wins AS
+SELECT p.id AS id,
+    COALESCE(COUNT(m.winner), 0) AS matches_won
+FROM players p
+LEFT JOIN matches m
+ON p.id = m.winner
+GROUP BY p.id
+ORDER BY matches_won DESC;
+
+CREATE VIEW losses AS
+SELECT p.id AS id,
+    COALESCE(COUNT(m.loser), 0) AS matches_lost
+FROM players p
+LEFT JOIN matches m
+ON p.id = m.loser
+GROUP BY p.id
+ORDER BY matches_lost DESC;
+
+CREATE VIEW standings AS
+SELECT p.id AS id,
+    p.name AS name,
+    w.matches_won as wins,
+    (l.matches_lost + w.matches_won) AS matches
+FROM players p
+LEFT JOIN wins w
+ON p.id = w.id
+LEFT JOIN losses l
+ON p.id = l.id
+ORDER BY wins DESC;
