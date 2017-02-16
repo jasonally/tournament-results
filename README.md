@@ -5,9 +5,9 @@ This project uses concepts from Udacity's Intro to Relational Databases course t
 
 ### Directory Contents
 1. `tournament.sql` - Contains the PostgreSQL database schema
-2. tournament.py - Contains Python functions used to update or retrieve data from the schema
-3. tournament_test.py - Contains unit tests to verify tournament.py's functions work properly
-4. tournament.pyc - Compiled version of tournament.py
+2. `tournament.py` - Contains Python functions used to update or retrieve data from the schema
+3. `tournament_test.py` - Contains unit tests to verify tournament.py's functions work properly
+4. `tournament.pyc` - Compiled version of tournament.py
 
 ### How to Run
 1. Clone this repo to your computer
