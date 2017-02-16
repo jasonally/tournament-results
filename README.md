@@ -16,5 +16,5 @@ This project uses concepts from Udacity's Intro to Relational Databases course t
 3. Run `tournament_test.py` by typing:    
   `python tournament_test.py`
   
-## Areas for Improvement
+### Areas for Improvement
 Udacity suggested the database schema could be improved to contain the ability to create multiple tournaments, each with different tables containing players, matches, wins, losses, standings, and Swiss-style match pairings.
