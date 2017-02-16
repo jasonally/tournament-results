@@ -12,6 +12,10 @@ CREATE DATABASE tournament;
 
 \c tournament
 
+DROP VIEW IF EXISTS wins;
+DROP VIEW IF EXISTS losses;
+DROP VIEW IF EXISTS standings;
+
 DROP TABLE IF EXISTS players;
 DROP TABLE IF EXISTS matches;
 
